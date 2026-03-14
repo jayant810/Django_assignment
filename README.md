@@ -54,11 +54,15 @@ Once the server is running, you can access the documentation at:
 - **ReDoc**: [http://127.0.0.1:8000/redoc/](http://127.0.0.1:8000/redoc/)
 
 ## Key Features
+
+- **Advanced Engineering (Stand-out Details)**:
+  - **Global Exception Handling**: Custom uniform error responses for all API endpoints (see `core/exceptions.py`).
+  - **Automated Data Integrity**: Models automatically enforce a single `primary_mapping=True` per parent by resetting old primaries on save.
+  - **Query Optimization**: Implemented `select_related()` in mapping views to solve the N+1 query problem and improve performance.
 - **Validation Rules**:
   - Unique `code` for master records.
-  - Duplicate mapping prevention.
-  - Only one `primary_mapping=True` allowed per parent.
+  - Duplicate mapping prevention using `unique_together` constraints.
 - **Filtering**:
-  - Supports query-param based filtering (e.g., `/api/products/?vendor_id=1`).
-- **Soft Delete**: Uses `is_active` field for record management.
-- **Modularity**: Each app contains its own `models.py`, `serializers.py`, `views.py`, and `urls.py`.
+  - Supports query-param based filtering (e.g., `/api/vendor-product-mappings/?vendor_id=1`).
+- **Soft Delete**: Uses `is_active` field for consistent record management.
+- **Modularity**: Strictly decoupled apps, each with its own models, serializers, views, and URL routing.
