@@ -1,0 +1,37 @@
+# Django Internship Assignment - Setup Activity Log
+
+## Environment Setup
+Project: Modular Entity and Mapping System
+Language: Python 3.14.3
+Framework: Django 6.0.3
+
+## Migration Log
+Operations to perform:
+  Apply all migrations: admin, auth, certification, contenttypes, course, course_certification_mapping, product, product_course_mapping, sessions, vendor, vendor_product_mapping
+Running migrations:
+  No migrations to apply. (Already up to date)
+
+## Seed Data Log
+Command: py manage.py seed_data
+Output:
+Seeding data...
+Successfully seeded data
+Entities created: Vendors, Products, Courses, Certifications
+Mappings created: Vendor-Product, Product-Course, Course-Certification
+
+## Test Execution Log
+Command: py manage.py test vendor
+Output:
+Found 5 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.039s
+
+OK
+Destroying test database for alias 'default'...
+
+## API Documentation
+Swagger UI: http://127.0.0.1:8000/swagger/
+ReDoc: http://127.0.0.1:8000/redoc/
